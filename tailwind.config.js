@@ -1,12 +1,10 @@
 module.exports = {
-  content: ['./*.html'],
+  content: ['./*.html', './**/*.html'],
   theme: {
     extend: {
-      screens: {
-        sm: '480px',
-      },
       fontFamily: {
         DancingScript: ['Dancing Script', 'cursive'],
+        opensans: ['Open Sans', 'sans-serif'],
       },
     },
   },

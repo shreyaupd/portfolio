@@ -1,71 +1,143 @@
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <title>Tailwind Portfolio</title>
-</head>
+  </head>
 
-<body style="font-family: 'Dancing Script', cursive;">
-    <div class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-300">
-        <nav style="font-family: 'Open Sans', sans-serif;" class="w-full fixed top-0 bg-white z-10 dark:bg-slate-900">
-            <div class="container mx-auto py-5 flex justify-between items-center">
-                <div class="flex items-center gap-2">
-                    <img style="
-                width: 8.6rem;
-                height: 6rem;
-                border-radius: 15px;
-              " src="port.png" alt="Portfolio Image" />
-                </div>
-                <!-- greater than 760px works as flex -->
-                <ul class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm"
-                    style="text-transform: uppercase;">
-                    <li class="hover:text-gray-500">
-                        <a href="#">homepage</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">About me</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">services</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">works</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">contacts</a>
-                    </li>
-                </ul>
-                <!-- Moon Icon: Visible on medium screens and larger, hidden on small screens (hidden in all screen at first then acts as block element from the middle of the screen(greater than 760px)) -->
-                <i id="Moon" class="fa-solid fa-moon fa-2x cursor-pointer hidden md:block" style="color: #FFD43B;"></i>
+  <body style="font-family: 'Dancing Script', cursive">
+    <!-- Circle background behind the container with z-0 -->
+    <div
+      class="hidden lg:block absolute bottom-40 right-0 left-0 mx-auto w-96 h-96 bg-indigo-900 rounded-full -z-20 overflow-hidden"
+    ></div>
 
-                <!-- Bars Icon: Visible on small screens, hidden on medium screens and larger(hidden till the middle of the screen(smaller than 760px)) -->
-                <i id="hamburger" class="fa-solid fa-bars fa-2x space-y-1 md:hidden cursor-pointer"></i>
-                <ul id="menu" class="hidden bg-indigo-50 pt-0  border-l-2 border-gray-500 absolute top-20 right-0 w-90% p-10 space-y-5 text-center rounded-b-2xl" >
-                    <li class= " hover:text-gray-500">
-                        <a href="#">homepage</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">About me</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">services</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">works</a>
-                    </li>
-                    <li class="hover:text-gray-500">
-                        <a href="#">contacts</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <!-- Main container with z-10 and overflow-hidden -->
+    <div
+      class="h-1/2 lg:h-screen bg-gradient-to-t from-indigo-300 relative z-10 overflow-hidden"
+    >
+      <!-- Navigation bar -->
+      <nav
+        style="font-family: 'Open Sans', sans-serif; text-transform: uppercase"
+        class="w-full fixed top-0 bg-white z-50 dark:bg-slate-900"
+      >
+        <div
+          class="container mx-auto py-5 flex justify-between items-center relative"
+        >
+          <div class="flex items-center gap-2">
+            <img
+              style="width: 8.6rem; height: 6rem; border-radius: 15px"
+              src="port.png"
+              alt="Portfolio Image"
+            />
+          </div>
+          <!-- greater than 760px works as flex -->
+          <ul
+            class="hidden md:flex space-x-10 text-gray-600 dark:text-gray-100 font-bold text-sm"
+          >
+            <li class="hover:text-gray-500">
+              <a href="#">homepage</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">About me</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">services</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">works</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">contacts</a>
+            </li>
+          </ul>
+          <!-- Moon Icon -->
+          <i
+            id="Moon"
+            class="fa-solid fa-moon fa-2x cursor-pointer hidden md:block"
+            style="color: #ffd43b"
+          ></i>
+
+          <!-- Hamburger Icon with Transform and Transition -->
+          <i
+            id="hamburger"
+            class="fa-solid fa-bars fa-2x md:hidden cursor-pointer mr-5 transform transition-transform duration-500 ease-in-out"
+          ></i>
+
+          <!-- Hidden Menu -->
+          <ul
+            id="menu"
+            class="hidden divide-gray-100 bg-white shadow-lg pt-0 border-l-2 border-gray-500 absolute top-20 right-0 w-90% p-10 space-y-5 text-center rounded-b-2xl z-[100]"
+          >
+            <li class="hover:text-gray-500">
+              <a href="#">homepage</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">About me</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">services</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">works</a>
+            </li>
+            <li class="hover:text-gray-500">
+              <a href="#">contacts</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Image inside the container -->
+      <img
+        src="photo.png"
+        class="absolute bottom-0 right-0 lg:left-0 lg:top-44 h-3/5 w-auto mx-auto object-cover z-30"
+        style="border-radius: 15px; border: none"
+      />
+      <div
+        class="absolute top-1/2 left-10 font-extrabold sm:text-5xl md:text-6xl lg:text-7xl lg:left-32 text-left"
+      >
+        <span class="text-gray-500 block">Frontend</span>
+        <p id="text"class="text-red-600"></p>
+      </div>
+
+      <!-- Section for the text "Hi, I'm Shreya" -->
+      <div
+        class="hidden lg:flex flex-col gap-2 absolute right-10 top-1/4 bg-white p-6 rounded-lg z-20 w-1/3">
+        <h1 class="text-indigo-900 text-4xl font-bold mb-4">Hi, I'm Shreya</h1>
+        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias,
+          perspiciatis. Ab, expedita, temporibus quae magnam ad illum fugit
+          laborum nesciunt est perspiciatis reprehenderit. Qui nam voluptate
+          animi nobis eius consectetur unde debitis totam tenetur officia?
+        </p>
+        <a
+          href="#contact"
+          class="bg-blue-600 text-white font-bold py-2 px-4 w-20 rounded-full  hover:bg-red-700">
+          Hire Me
+        </a>
+      </div>
     </div>
+
     <script src="script.js"></script>
-</body>
+    <script src="autotyping.js"></script>
+  </body>
 </html>

@@ -1,12 +1,19 @@
 module.exports = {
-  content: ['./*.html', './**/*.html'],
+  purge: {
+    content: ['./src/**/*.html', './src/**/*.js'], // Update with your paths
+    safelist: [
+      'hover:scale-105',
+      'transition-transform',
+      'duration-300'
+    ],
+  },
   theme: {
+    extend: {},
+  },
+  variants: {
     extend: {
-      fontFamily: {
-        DancingScript: ['Dancing Script', 'cursive'],
-        opensans: ['Open Sans', 'sans-serif'],
-      },
+      scale: ['hover'],
     },
   },
   plugins: [],
-}
+};
